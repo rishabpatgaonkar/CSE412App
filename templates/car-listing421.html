@@ -34,51 +34,53 @@
       Make
      </dt>
      <dd id="c_make">
-      Default Make
+      Tesla
      </dd>
      <dt>
       Model
      </dt>
      <dd id="c_model">
-      Default Model
+      Model Y
      </dd>
      <dt>
       Year
      </dt>
      <dd id="c_year">
-      Default Year
+      2022
      </dd>
      <dt>
       Color
      </dt>
      <dd id="c_color">
-      Default Color
+      GREY
      </dd>
      <dt>
       Transmission
      </dt>
      <dd id="c_trans">
-      Default Trans
+      AUTOMATIC
      </dd>
      <dt>
       Engine
      </dt>
      <dd id="c_engine">
-      Default Engine
+      ELECTRIC
      </dd>
      <dt>
       Price
      </dt>
      <dd id="c_price">
-      Default Price
+      $64500
      </dd>
      <dt>
       Zipcode
      </dt>
      <dd id="c_zipcode">
-      Default Zipcode
-     </dd>
+      85244
+     </dd> 
     </dl>
+    <img src="../static/TeslaModelY.jpg" alt="Grey Tesla Model Y" width="400" 
+     height="300" style="margin-left: 350px;">
    </div>
    <div class="contact-form-container">
     <header class="">
@@ -86,7 +88,7 @@
       Contact seller
      </h2>
     </header>
-    <form action="/action_page.php">
+    <form action="success.html">
      <label for="fname">
       First name:
      </label>
@@ -102,15 +104,16 @@
      <label for="email">
       Email:
      </label>
-     <input id="email" name="email" type="text"/>
+     <input id="email" name="email" type="text" style="margin-left: 35px;"/>
      <br/>
      <br/>
+
      <div class="comments">
       <div class="sds-input-container sds-input-container--textarea">
-       <textarea class="sds-text-field comment-box" id="comments" name="lead[comments]" phx-debounce="blur" placeholder=" ">I'd like to know if the new 2020 Tesla model 5, is still available.</textarea>
-       <label class="sds-label" for="comments">
-        Comments
-       </label>
+        <label class="sds-label" for="comments">
+            Comments
+        </label>
+       <textarea class="sds-text-field comment-box" id="comments" name="lead[comments]" phx-debounce="blur" placeholder=" " rows="4" cols="50"></textarea>
       </div>
      </div>
      <input type="submit" value="Submit"/>
