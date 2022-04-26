@@ -140,7 +140,7 @@ def submit():
         records = cursor.fetchall()
         print("Total number of rows in table: ", cursor.rowcount)
         p = []
-        tbl = "<tr><td>Make</td><td>Model</td><td>Year</td><td>Color</td><td>Price</td><td>ZipCode</td><td>Engine</td><td>Transmission</td><td></td></tr>"
+        tbl = "<tr><td id=\"c_make\">Make</td><td id=\"c_model\">Model</td><td id=\"c_year\">Year</td><td id=\"c_color\">Color</td><td id=\"c_zipcode\">ZipCode</td><td id=\"c_price\">Price</td><td id=\"c_engine\">Engine</td><td id=\"c_transmission\">Transmission</td><td></td></tr>"
         p.append(tbl)
         # Displays user selected query
         print("\nPrinting each row")
@@ -160,10 +160,10 @@ def submit():
             d = "<td>%s</td>" % row[5]
             p.append(d)
             print("Price  = ", row[6])
-            e = "<td>%s</td>" % row[6]
+            e = "<td>%s</td>" % row[7]
             p.append(e)
             print("ZipCode  = ", row[7])
-            f = "<td>%s</td>" % row[7]
+            f = "<td>%s</td>" % row[6]
             p.append(f)
             print("Engine  = ", row[8])
             g = "<td>%s</td>" % row[8]
@@ -171,13 +171,14 @@ def submit():
             print("Transmission  = ", row[9], "\n")
             h = "<td>%s</td>" % row[9]
             p.append(h)
-            i = "<td>%s</td></tr>" % "<a href=./templates/car-listing421.html>View</a>"
+            i = "<td>%s</td></tr>" % "<a href=./templates/car-listing421.html?make=$c_make>View</a>"
             p.append(i)
+            print(a)
 
         contents = '''<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
         <html>
         <head>
-        <link rel="stylesheet" href="/static/CarListingStyle.css">
+        <link rel="stylesheet" href="./static/style.css">
         <meta content="text/html; charset=ISO-8859-1"
         http-equiv="content-type">
         <title>Python Webbrowser</title>
@@ -185,7 +186,7 @@ def submit():
         <body>
         <div class="car-details">
         <dl class="description-list">
-        <table>
+        <table method="GET">
         %s
         </table>
         </body>
@@ -242,7 +243,7 @@ def submit():
             conn.close()
             print("PostgreSQL connection is closed")
 
-            return render_template('success.html')
+            return render_template('index.html')
 
 
 if __name__ == '__main__':
